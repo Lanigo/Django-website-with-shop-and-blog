@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+	<div class="content">
+		<h1>Lani Gouws Art</h1>
+		<img class="main"src="{% static "images/main.png" %}" alt="main image"/>
+    	{% load post_tags %}
+    	{% get_recent_posts %}
+    	{% load product_tags %}
+    	{% get_recent_products %}
+ 	</div>
+ {% endblock %}
+ 
+{% block footer %}
+	<div class="footer">
+ 		<img class="media"src="{% static "images/FB.png" %}" alt="Facebook"/>
+ 		<img class="media"src="{% static "images/github.png" %}" alt="Github"/>
+ 		<img class="media"src="{% static "images/google+.png" %}" alt="Google+"/>
+ 		<img class="media"src="{% static "images/twitter.png" %}" alt="Twitter"/>
+		<p class="foot">Created and maintained by Lani Gouws &#169; 2015.</p>
+	</div>
+{% endblock %}
+

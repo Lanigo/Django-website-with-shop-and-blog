@@ -1,0 +1,12 @@
+{% block body %}
+	<h4>From Our Shop</h4>
+	<hr />
+ 	{% for product in products %}
+		<a href="{% url 'product_detail' product.slug %}">{{product.get_name}}</a><br />
+		<img src="{{ product.picture.url }}" width="10%"><br />
+		<p class="shops"><strong>Medium:</strong> {{product.medium}}</p><br />
+		<p class="shops"><strong>Description:</strong> {{product.short_description}}</p><br />
+		<p class="shops"><strong>Date Added:</strong> {{product.date_added}}</p><br />
+	<hr />
+	{% endfor %}
+{% endblock %}

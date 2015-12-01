@@ -1,0 +1,10 @@
+{% block body %}
+	<div class="block">	
+		<h4>Recent Posts</h4>
+		<hr/>
+		<div class="recent_posts">
+	{% for post in posts %}
+		<a class="recent" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a><br/>{{ post.published_date }}<br/><br/>
+	{% endfor %}
+	<a class="subscribe" href="{% url 'feeds_posts' %}">Subscribe to this Feed</a></div>
+{% endblock %}</div>

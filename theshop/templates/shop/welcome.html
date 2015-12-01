@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block body %}
+	{% load i18n %}
+		<div class="welcome">
+			<h1 class="heading">Welcome to the Shop</h1>
+		</div>
+		<div class="links">	
+			<a href="{% url 'product_list' %}"><h2>Available Art</h2></a>
+		</div>
+		<div class="links">	
+			<a href="{% url 'cart' %}"><h2>Your cart</h2></a>
+		</div>
+		<div class="welcome">
+			{% if user.is_authenticated %}
+			<h1 class="heading">{% trans "Hello" %} {{ user }}</h1>
+		</div>
+		<div class="links">	    
+			<a href="{% url 'order_list' %}"><h2>{% trans "Your orders" %}</h2></a>
+		</div>
+	{% endif %}
+{% endblock %}

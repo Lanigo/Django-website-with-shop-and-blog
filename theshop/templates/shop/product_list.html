@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block body %}
+	<h1>All Available Paintings:</h1>
+	<hr />
+	{% for object in object_list %}
+	<a href="{% url 'product_detail' object.slug %}">{{object.get_name}}</a><br />
+	<img src="{{ object.picture.url }}" width="20%"><br />
+	<p class="shops"><strong>Medium:</strong> {{object.medium}}</p><br />
+	<p class="shops"><strong>Description:</strong> {{object.short_description}}</p><br />
+
+	<p class="shops"><strong>Date Added:</strong> {{object.date_added}}</p><br />
+
+	<p class="shops"><strong>Price</strong> R{{object.unit_price}}</p><br />
+	<hr />
+
+	{% endfor %}
+{% endblock %}

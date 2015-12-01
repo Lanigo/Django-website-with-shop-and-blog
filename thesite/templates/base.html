@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>Lani Shop</title>
+ 	      {% load staticfiles %}
+        <link href="{% static 'thesite/main.css' %}" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+  	    {% block nav %}
+        <div class="navigation">
+  	        <a class="nav" href="{% url 'home' %}">Home</a>
+  	        <a class="nav" href="{% url 'post_list' %}">Blog</a>
+  	        <a class="nav" href="{% url 'shop_welcome' %}">Shop</a>
+  	        <a class="nav" href="{% url 'contact' %}">Contact</a>
+        </div>
+  	    {% endblock %}
+        
+        <div class="content">
+            {% block body %}
+            {% endblock %}
+        </div>
+        
+        {% block footer %}
+        {% endblock %}
+    </body>
+</html>

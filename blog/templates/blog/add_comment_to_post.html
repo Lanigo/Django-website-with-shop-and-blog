@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+	<h1>New Comment</h1>
+	<form method="POST" class="post-form">{% csrf_token %}
+		<h5>Author:</h5>
+		{{ form.author }}<br/>
+		<h5>What do you want to say?:</h5>		
+		{{ form.text }}<br/>
+		<h5>Created at:</h5>
+		<p class="date">{{ form.created_at }}</p>
+		<br/>
+		<button type="submit" class="btn">Send</button>
+	</form>
+{% endblock %}

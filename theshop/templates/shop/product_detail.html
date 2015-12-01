@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% block body %}
+
+	<h1>Product detail:</h1>
+	<h4><strong>Name:</strong> {{object.get_name}}</h5>
+	<img src="{{ object.picture.url }}" width="50%"/>
+	<h5><strong>Medium:</strong> {{object.medium}}</h5>
+	<h5><strong>Width:</strong> {{object.width}} cm</h5>
+	<h5><strong>Height:</strong> {{object.height}} cm</h5>
+	<h5><strong>Description:</strong>
+	{{object.short_description}}</h5>
+	<h5><strong>More About This Work:</strong><br />
+	{{object.long_description}}</h5>
+
+	<h5><strong>Date Added:</strong> {{object.date_added}}</h5>
+ 
+
+	<h5><strong>Price:</strong> R{{object.unit_price}}</h5>
+	<br />
+
+	<form method="post" action="{% url 'cart' %}">{% csrf_token %}
+	<input type="hidden" name="add_item_id" value="{{object.pk}}">
+	<input type="hidden" name="add_item_quantity" value="1">
+	<input type="submit" value="Add to cart">
+	</form>
+	<br/>
+{% endblock %}
+
