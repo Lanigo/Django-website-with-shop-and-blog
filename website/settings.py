@@ -20,12 +20,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'g_p@*jrtb-$2w#io9uvo=-g)*9%hlxgp9d8csnlkopz_7zbi8p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+ADMINS = (
+    ('lanigouws', 'lanigouws@gmail.com'),
+)
 
 # Application definition
 
@@ -92,7 +96,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'website',
         'USER': 'lani',
-        'PASSWORD': '',
+        'PASSWORD': 'eendvogel',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -131,8 +135,8 @@ SHOP_ADDRESS_MODEL = 'theshop.addressmodel.MyAddress'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = 'lanigouws@gmail.com'
+EMAIL_HOST_PASSWORD = 'LeeGordonMcKillop1968'
 EMAIL_PORT = "587"
 
 
